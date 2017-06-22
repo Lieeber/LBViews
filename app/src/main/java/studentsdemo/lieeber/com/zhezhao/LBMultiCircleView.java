@@ -18,7 +18,7 @@ import android.view.View;
  * Created by lieeber on 2017/6/20.
  */
 
-public class MyCirlceView extends View {
+public class LBMultiCircleView extends View {
     private int size;
     private float cR;
     private float bcR;
@@ -29,7 +29,7 @@ public class MyCirlceView extends View {
     private float textOffset;
     private Paint arcPiant;
 
-    public MyCirlceView(Context context, @Nullable AttributeSet attrs) {
+    public LBMultiCircleView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }

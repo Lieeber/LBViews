@@ -15,7 +15,7 @@ import android.view.MotionEvent;
  * Created by lieeber on 2017/6/20.
  */
 
-public class MyImageView extends AppCompatImageView {
+public class LBMatrixImageView extends AppCompatImageView {
     private static final int MODE_NONE = 0x00123;// 默认的触摸模式
     private static final int MODE_DRAG = 0x00321;// 拖拽模式
     private static final int MODE_ZOOM = 0x00132;// 缩放or旋转模式
@@ -28,7 +28,7 @@ public class MyImageView extends AppCompatImageView {
     private float originSpace;
     private float originRotate;
 
-    public MyImageView(Context context, @Nullable AttributeSet attrs) {
+    public LBMatrixImageView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cc);
