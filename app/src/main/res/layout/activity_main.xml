@@ -2,12 +2,127 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimary"
     android:layout_height="match_parent">
 
-    <studentsdemo.lieeber.com.zhezhao.LBLeafView
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:src="@drawable/timg"-->
+    <!--android:scaleType="fitXY"-->
+
+    <!--android:layout_height="match_parent"/>-->
+    <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:background="@drawable/tv_bg"
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="clear"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="清除"/>
+
+        <TextView
+            android:background="@drawable/tv_bg_2"
+            android:id="@+id/tvReset"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="reset"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="撤销"/>
+
+        <TextView
+            android:background="@drawable/tv_bg_3"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="forward"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="前进"/>
+
+        <TextView
+            android:background="@drawable/tv_bg_4"
+            android:id="@+id/tvLine"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="drawLine"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="线条"/>
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:clickable="true"-->
+        <!--android:gravity="center"-->
+        <!--android:onClick="drawFill"-->
+        <!--android:paddingLeft="5dp"-->
+        <!--android:paddingRight="5dp"-->
+        <!--android:text="填充"/>-->
+
+        <TextView
+            android:background="@drawable/tv_bg_4"
+            android:id="@+id/tvPaint"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="drawPaint"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="画笔"/>
+
+        <TextView
+            android:background="@drawable/tv_bg_4"
+            android:id="@+id/tvEraser"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="eraser"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="橡皮擦"/>
+    </LinearLayout>
+
+    <studentsdemo.lieeber.com.zhezhao.DrawSomethingView
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+
         android:layout_height="match_parent"
-        android:scaleType="matrix"/>
+        android:layout_below="@+id/ll"/>
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/iv_image"-->
+    <!--android:src="@drawable/timg"-->
+    <!--android:onClick="click"-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:text="震动"/>-->
+
+    <!--<studentsdemo.lieeber.com.zhezhao.ColorPickerView-->
+        <!--android:id="@+id/color_picker"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
+
 
 </RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!--<studentsdemo.lieeber.com.zhezhao.MatrixSetRectToRectTest-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/iv_image"-->
+    <!--android:src="@drawable/timg"-->
+    <!--android:onClick="click"-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_width="200dp"-->
+    <!--android:layout_height="200dp"-->
+    <!--android:text="震动"/>-->
+
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ee1122">
+
+        <TextView
+            android:id="@+id/tv_qichuang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="【起床】"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_qichuang"
+            android:text="06:30-07:00"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="确定"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/rl_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="开始时间"
+            android:layout_toLeftOf="@+id/line"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:id="@+id/line"
+            android:layout_centerInParent="true"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="#777777"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="结束时间"
+            android:textColor="#000000"
+            android:textSize="18sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
