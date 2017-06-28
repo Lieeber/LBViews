@@ -14,16 +14,16 @@
         android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
 
         <TextView
-            android:background="@drawable/tv_bg"
             android:id="@+id/tvClear"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="@drawable/tv_bg"
             android:clickable="true"
             android:gravity="center"
             android:onClick="clear"
@@ -32,10 +32,10 @@
             android:text="清除"/>
 
         <TextView
-            android:background="@drawable/tv_bg_2"
             android:id="@+id/tvReset"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="@drawable/tv_bg_2"
             android:clickable="true"
             android:gravity="center"
             android:onClick="reset"
@@ -44,9 +44,9 @@
             android:text="撤销"/>
 
         <TextView
-            android:background="@drawable/tv_bg_3"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="@drawable/tv_bg_3"
             android:clickable="true"
             android:gravity="center"
             android:onClick="forward"
@@ -55,10 +55,10 @@
             android:text="前进"/>
 
         <TextView
-            android:background="@drawable/tv_bg_4"
             android:id="@+id/tvLine"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
             android:clickable="true"
             android:gravity="center"
             android:onClick="drawLine"
@@ -77,10 +77,10 @@
         <!--android:text="填充"/>-->
 
         <TextView
-            android:background="@drawable/tv_bg_4"
             android:id="@+id/tvPaint"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
             android:clickable="true"
             android:gravity="center"
             android:onClick="drawPaint"
@@ -89,16 +89,29 @@
             android:text="画笔"/>
 
         <TextView
-            android:background="@drawable/tv_bg_4"
             android:id="@+id/tvEraser"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="@drawable/tv_bg_4"
             android:clickable="true"
             android:gravity="center"
             android:onClick="eraser"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:text="橡皮擦"/>
+
+
+        <TextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@drawable/tv_bg_2"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="save"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="保存"/>
     </LinearLayout>
 
     <studentsdemo.lieeber.com.zhezhao.DrawSomethingView
@@ -120,9 +133,9 @@
     <!--android:text="震动"/>-->
 
     <!--<studentsdemo.lieeber.com.zhezhao.ColorPickerView-->
-        <!--android:id="@+id/color_picker"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
+    <!--android:id="@+id/color_picker"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"/>-->
 
 
 </RelativeLayout>

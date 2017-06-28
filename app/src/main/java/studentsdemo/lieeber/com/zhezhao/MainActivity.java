@@ -123,4 +123,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.tvLine).setSelected(false);
         findViewById(R.id.tvPaint).setSelected(false);
     }
+
+    public void save(View view) {
+        myView.save();
+    }
 }

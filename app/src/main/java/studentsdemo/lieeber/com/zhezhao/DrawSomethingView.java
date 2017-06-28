@@ -1,7 +1,12 @@
 package studentsdemo.lieeber.com.zhezhao;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -14,12 +19,24 @@ import android.graphics.Paint.Style;
 import android.graphics.Path;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by lieeber on 2017/6/28.
@@ -235,6 +252,7 @@ public class DrawSomethingView extends View {
     private void blankBitmap() {
         mBitmap = Bitmap.createBitmap(viewWidth, viewHeight, Config.ARGB_8888);
         mCanvas.setBitmap(mBitmap);
+        mCanvas.drawColor(Color.WHITE);
     }
 
     public void clear() {
@@ -288,5 +306,48 @@ public class DrawSomethingView extends View {
     public int getlineColor() {
         return lineColor;
 
+    }
+
+    public void save() {
+
+        if (ContextCompat.checkSelfPermission(getContext(),
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                == PackageManager.PERMISSION_GRANTED) {
+            //拥有读写文件权限
+            Log.i(TAG,"拥有读写文件权限");
+            //获得系统当前时间，并以该时间作为文件名
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+            Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+            String dir = Environment.getExternalStorageDirectory().getAbsolutePath();
+            String str = formatter.format(curDate) + "paint.png";
+            File file = new File(dir + "/"+str);
+            FileOutputStream fos = null;
+            try {
+                fos = new FileOutputStream(file);
+                Toast.makeText(getContext(), "保存成功", Toast.LENGTH_LONG).show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            mBitmap.compress(CompressFormat.PNG, 100, fos);
+
+//            Intent intent = new Intent(Intent.ACTION_MEDIA_MOUNTED);
+//            intent.setData(Uri.fromFile(Environment.getExternalStorageDirectory()));
+//            getContext().sendBroadcast(intent);
+            getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + Environment.getExternalStorageDirectory())));
+            Toast.makeText(getContext(), "保存成功", Toast.LENGTH_LONG).show();
+        }else{
+            Log.i(TAG,"没有读写权限");
+
+            Toast.makeText(getContext(), "没有读写权限", Toast.LENGTH_LONG).show();
+            //没有读写权限
+            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) getContext(),
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
+                ActivityCompat.requestPermissions((Activity) getContext(),
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        140);
+            }else{
+//                showPermissionDialog();
+            }
+        }
     }
 }
