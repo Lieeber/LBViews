@@ -3,12 +3,10 @@
               android:layout_height="fill_parent"
               android:background="#E1E6F6"
               android:orientation="vertical">
-
     <studentsdemo.lieeber.com.lbview.viewgroups.LBFlowLayout
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#123456">
-
         <TextView
             style="@style/text_flag_01"
             android:layout_height="wrap_content"
@@ -38,10 +36,12 @@
         <TextView
             style="@style/text_flag_01"
             android:text="I thick i jfdklfjdklfjkdl根据坑积分jfkdgjfkutriliveofjelfjdslgjffgjklfjljldfdkgjkflgjkgjfdklgfjldjglfd "/>
+
         <TextView
-            android:layout_height="wrap_content"
             style="@style/text_flag_01"
+            android:layout_height="wrap_content"
             android:text="返矿就开饭到了费等发的"/>
+
         <TextView
             style="@style/text_flag_01"
             android:layout_height="wrap_content"

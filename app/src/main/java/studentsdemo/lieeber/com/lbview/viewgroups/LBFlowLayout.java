@@ -61,7 +61,8 @@ public class LBFlowLayout extends ViewGroup {
                 width = Math.max(lineWidth, width);
             }
 
-            setMeasuredDimension((modeWidth == MeasureSpec.EXACTLY) ? sizeWidth : width, (modeHeight == MeasureSpec.EXACTLY) ? sizeHeight : height);
+            setMeasuredDimension((modeWidth == MeasureSpec.EXACTLY) ? sizeWidth : width > sizeWidth ? sizeWidth : width,
+                    (modeHeight == MeasureSpec.EXACTLY) ? sizeHeight : height > sizeHeight ? sizeHeight : height);
         }
     }
 
