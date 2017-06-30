@@ -159,7 +159,6 @@ public class RemoteControlMenu extends View {
 
 
     @Override public boolean onTouchEvent(MotionEvent event) {
-
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_MOVE:
