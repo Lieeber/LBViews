@@ -186,34 +186,11 @@ public class LayoutChildToAngleView extends ViewGroup {
 
     @Override
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
-        Log.e(TAG, "generateDefaultLayoutParams");
-        return new MarginLayoutParams(LayoutParams.MATCH_PARENT,
-                LayoutParams.MATCH_PARENT);
+        return new MarginLayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
     }
 
     @Override
-    protected ViewGroup.LayoutParams generateLayoutParams(
-            ViewGroup.LayoutParams p) {
-        Log.e(TAG, "generateLayoutParams p");
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         return new MarginLayoutParams(p);
     }
-
-	/*
-     * if (heightMode == MeasureSpec.UNSPECIFIED)
-		{
-			int tmpHeight = 0 ;
-			LayoutParams lp = getLayoutParams();
-			if (lp.height == LayoutParams.MATCH_PARENT)
-			{
-				Rect outRect = new Rect();
-				getWindowVisibleDisplayFrame(outRect);
-				tmpHeight = outRect.height();
-			}else
-			{
-				tmpHeight = getLayoutParams().height ;
-			}
-			height = Math.max(height, tmpHeight);
-
-		}
-	 */
 }
